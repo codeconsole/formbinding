@@ -43,6 +43,10 @@
                         <label for='comments'>Comments</label>
                         Likes Cats<g:checkBox name="comments" value="Likes Cats" checked="${this.person.comments == 'Likes Cats'}" />
                     </div>
+                    <div class='fieldcontain'>
+                        <label for='engineer'>Engineer</label>
+                        <g:checkBox name="engineer" value="true" checked="${this.person.engineer}" />
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
