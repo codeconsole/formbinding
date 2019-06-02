@@ -29,7 +29,20 @@
             <g:form resource="${this.person}" method="PUT">
                 <g:hiddenField name="version" value="${this.person?.version}" />
                 <fieldset class="form">
-                    <f:all bean="person"/>
+                    <div class='fieldcontain required'>
+                        <label for='name'>Name</label>
+                        <g:textField name="name" value="${person.name}" />
+                    </div>
+                    <div class='fieldcontain'>
+                        <label for='languages'>Languages</label>
+                        English<g:checkBox name="languages" value="English" checked="${this.person.languages?.contains('English')}" /> &nbsp; 
+                        Spanish<g:checkBox name="languages" value="Spanish" checked="${this.person.languages?.contains('Spanish')}" /> &nbsp;
+                        French<g:checkBox name="languages" value="French" checked="${this.person.languages?.contains('French')}" />
+                    </div>
+                    <div class='fieldcontain'>
+                        <label for='comments'>Comments</label>
+                        Likes Cats<g:checkBox name="comments" value="Likes Cats" checked="${this.person.comments == 'Likes Cats'}" />
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

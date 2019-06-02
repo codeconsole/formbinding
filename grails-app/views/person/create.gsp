@@ -27,7 +27,20 @@
             </g:hasErrors>
             <g:form resource="${this.person}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="person"/>
+                    <div class='fieldcontain required'>
+                        <label for='name'>Name</label>
+                        <g:textField name="name" value="${person.name}" />
+                    </div>
+                    <div class='fieldcontain'>
+                        <label for='languages'>Languages</label>
+                        English<g:checkBox name="languages" value="English" checked="${person.languages?.contains('English')}" /> &nbsp; 
+                        Spanish<g:checkBox name="languages" value="Spanish" checked="${person.languages?.contains('Spanish')}" /> &nbsp;
+                        French<g:checkBox name="languages" value="French" checked="${person.languages?.contains('French')}" />
+                    </div>
+                    <div class='fieldcontain'>
+                        <label for='comments'>Comments</label>
+                        Likes Cats<g:checkBox name="comments" value="Likes Cats" checked="${person.comments == 'Likes Cats'}" /> 
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
