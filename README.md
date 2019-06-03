@@ -54,7 +54,7 @@ The checkbox behavior binds correctly for boolean, String, and List<String> valu
 
 A Simple example
 ```
-grails create-app 
+grails create-app formbinding
 grails
 create-domain-class Person
 generate-all Person
