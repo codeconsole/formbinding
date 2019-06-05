@@ -5,6 +5,8 @@ import static org.springframework.http.HttpStatus.*
 
 class PersonController {
 
+    static namespace = 'v3'
+
     PersonService personService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
